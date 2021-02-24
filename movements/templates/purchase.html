@@ -1,0 +1,112 @@
+{% extends "base.html" %}
+
+    {% block title %} Compra de criptos {% endblock %}
+    {% block titulo2 %} Compra de criptos {% endblock %}
+
+    {% block contenido %}
+    <form action="purchase" method="post">
+        {{ form.csrf_token }}
+        {% for error in msg %}
+        <p class="err-msg">
+                {{ error }}
+        </p>
+        {% endfor %}
+        
+    <div class="block">
+    {% if start == False %}
+            <div class="field">
+                {{ form.moneda_from.label }}
+                <div class="select-style">
+                    {{ form.moneda_from(class="datos")}}
+                    {% for error in form.moneda_from.errors %}
+                    <p class="err-msg">
+                        {{ error }}
+                    </p>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="field">
+                {{ form.cantidad_from.label }}
+                {{ form.cantidad_from(placeholder='Cantidad en números') }}
+                {% for error in form.cantidad_from.errors %}
+                    <p class="err-msg">
+                        {{ error }}
+                    </p>
+                {% endfor %}
+            </div>
+            <div class="field">
+                {{ form.moneda_to.label }}
+                <div class="select-style">
+                {{ form.moneda_to(class="datos") }}
+                </div>
+            </div>
+            <div class="field">
+                {{ form.conversion.label }}
+                {{ form.conversion(placeholder='Precio por unidad', disabled="disabled") }}
+                {% for error in form.conversion.errors %}
+                    <p class="err-msg">
+                        {{ error }}
+                    </p>
+                {% endfor %}
+            </div>
+            <div class="field">
+                {{ form.cantidad_to.label }}
+                {{ form.cantidad_to(placeholder='Cantidad a convertir', disabled="disabled") }}
+                {% for error in form.cantidad_to.errors %}
+                    <p class="err-msg">
+                        {{ error }}
+                    </p>
+                {% endfor %}
+            </div>
+            <div  class="field">
+                {{ form.calcular }}
+            </div>
+    {% else %}
+            <div class="field">
+                {{ form.moneda_from.label}}
+                {{ form.moneda_from(value=form.moneda_from.data, disabled="disabled",class="datos") }}
+                {{ form.moneda_from(value=form.moneda_from.data, hidden=true) }}
+            </div>
+            <div class="field">
+                {{ form.cantidad_from.label }}
+                {{ form.cantidad_from(value=form.cantidad_from.data, readonly="readonly") }}
+                {% for error in form.cantidad_from.errors %}
+                    <p class="err-msg">
+                        {{ error }}
+                    </p>
+                {% endfor %}
+            </div>
+            <div class="field">
+                {{ form.moneda_to.label }}
+                {{ form.moneda_to (value=form.moneda_to.data,disabled="disabled",class="datos") }}
+                {{ form.moneda_to (value=form.moneda_to.data,hidden=true) }}
+            </div>
+            <div class="field">
+                {{ form.conversion.label }}
+                {{ form.conversion(value=form.conversion.data,readonly="readonly")  }}
+                {% for error in form.conversion.errors %}
+                    <p class="err-msg">
+                        {{ error }}
+                    </p>
+                {% endfor %}
+            </div>
+            <div class="field">
+                {{ form.cantidad_to.label }}
+                {{ form.cantidad_to(value=form.cantidad_to.data,readonly="readonly") }}
+                {% for error in form.cantidad_to.errors %}
+                    <p class="err-msg">
+                        {{ error }}
+                    </p>
+                {% endfor %}
+            </div>
+            <div class="field">
+                {{ form.calcular }}
+            </div>
+            <div class="field">
+                {{ form.submit }}
+            </div>  
+    {% endif %}
+    </div>  
+    </form>
+  
+    {% endblock %}

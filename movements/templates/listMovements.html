@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+        {% block title%}Listado Cryptos{% endblock %}
+        <h2>
+        {% block titulo2 %} Listado de Cryptos{% endblock %}
+        </h2>
+        {% block contenido %}
+        <div>
+                {% for error in msg %}
+                <p class="err-msg">
+                        {{ error }}
+                </p>
+                {% endfor %}
+                {% if datos|length > 0 %}
+                <table>
+                <tr>
+                        <th>Fecha</th>
+                        <th>Hora</th>
+                        <th>From</th>
+                        <th>Q</th>
+                        <th>To</th>
+                        <th>Q</th>
+                        <th>P.U</th>
+                </tr>
+                {% for registro in datos %}
+                <tr>
+                        <td>{{ registro['fecha'] }}</td>
+                        <td>{{ registro['hora'] }}</td>
+                        <td>{{ registro['moneda_from'] }}</td>
+                        <td>{{ registro['cantidad_from'] }}</td>
+                        <td>{{ registro['moneda_to'] }}</td>
+                        <td>{{ registro['cantidad_to'] }}</td>
+                        <td>{{ registro['conversion'] }}</td>
+                </tr>
+                {% endfor %}
+                </table>
+                {% else %}
+                <p>No se ha realizado ningúna compra. Para iniciar a invertir pulsa en: "COMPRA" </p>
+                {% endif %}
+        </div>
+        {% endblock %}

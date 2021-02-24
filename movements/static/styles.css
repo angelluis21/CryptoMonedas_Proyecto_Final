@@ -1,0 +1,193 @@
+/* ----- STYLES BASE ----- */
+html{
+    background-color: mediumspringgreen;
+    font-family: "SF Pro Text","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
+
+}
+
+
+body{
+        font-size: 17px;
+        line-height: 1.47059;
+        font-weight: 400;
+        letter-spacing: -.022em;
+        font-family: "SF Pro Text","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
+        color: #1d1d1f;
+        font-style: normal;
+}
+
+
+nav {
+    
+    width: 100%;
+    background-color: #494d48;
+    overflow: auto;
+    list-style: none;
+    text-align: center;
+    margin: 0;
+
+}
+
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+
+.headBoard{
+    padding: 0;
+    margin: 5px;
+    text-align: center;
+}
+
+
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+}
+
+
+.err-msg{
+    color: #ff0000;
+}
+
+/* ----- STYLES LISTMOVEMENTS ----- */
+
+ul li a{
+    margin: 05px;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    background-color: rgb(230, 226, 226);
+  }
+  
+  th, td {
+    text-align: left;
+    padding: 8px;
+  }
+  
+  tr:nth-child(even){background-color: #f2f2f2}
+  
+  th {
+    background-color: #494d48;
+    color: white;
+  }
+
+
+/* ----- STYLES PURCHASE ----- */
+
+.block{
+    background-color: #494d48;
+    color: white;
+    text-align: center;
+    width: 50%;
+    margin-right: 25%;
+    margin-left: 25%;
+}
+
+
+.item {
+    display: inline;
+}
+
+.field{
+    padding: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+
+
+.select-style {
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    overflow: hidden;
+    background: #fafafa 
+}
+
+.select-style select {
+    padding: 5px 8px;
+    width: 130%;
+    border: none;
+    box-shadow: none;
+    background: transparent;
+    background-image: none;
+    -webkit-appearance: none;
+}
+
+.select-style select:focus {
+    outline: none;
+    width: 100%;
+}
+
+#moneda_from{
+    width: 100%;
+}
+
+#moneda_to{
+    width: 100%;
+}
+
+#cantidad_from{
+    width: 98%;
+    height: 20px;
+}
+
+#conversion{
+    width: 98%;
+    height: 20px;
+}
+
+#cantidad_to{
+    width: 98%;
+    height: 20px;
+}
+
+
+
+#calcular{
+    border-radius: 50px;
+    position: center;
+    left: 0;
+    bottom: 0;
+}
+
+#submit{
+    border-radius: 50px;    
+    position: center;
+    left: 0;
+    bottom: 0;
+}
+
+
+/* ----- STYLES STATUS ----- */
+
+.field_status{
+    background-color: #494d48;
+    color: white;
+    text-align: center;
+    width: 50%;
+    margin-right: 25%;
+    margin-left: 25%;
+}
+
+#total_invertido{
+    width: 98%;
+    height: 20px;   
+}
+
+#valorActual{
+    width: 98%;
+    height: 20px;
+}
+
+#valorNeto{
+    width: 98%;
+    height: 20px;
+}
